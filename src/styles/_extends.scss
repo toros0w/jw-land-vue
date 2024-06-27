@@ -1,0 +1,124 @@
+/* flex*/
+
+.flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-centered-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.img-frame-lg {
+  position: relative;
+  border: var(--main-border);
+  border-radius: 10px;
+
+  overflow: hidden;
+  &::after {
+    position: absolute;
+    bottom: -1px;
+    left: -1px;
+    width: 40%;
+    max-width: 200px;
+    height: 15%;
+    max-height: 80px;
+
+    content: "";
+
+    border-radius: 0 5px 0 0;
+    border: 1px solid var(--object-preview-card-main-color);
+    background-color: #ffffff;
+
+    background-image: url("@/assets/img/icon-logo.svg");
+    background-size: 40% auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 2;
+  }
+}
+
+/*text*/
+
+.text-truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/*scroll*/
+.main-scroll {
+  &::-webkit-scrollbar {
+    background-color: var(--main-scrollbar-color);
+    width: var(--main-scrollbar-width);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--main-scrollbar-thumb-color);
+    border-radius: 5px;
+  }
+}
+
+/*resets*/
+.list-reset {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.fieldset-reset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.btn-reset {
+  border: none;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.input-reset {
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  border-radius: 0;
+  background-color: #ffffff;
+
+  &::-webkit-search-decoration,
+  &::-webkit-search-cancel-button,
+  &::-webkit-search-results-button,
+  &::-webkit-search-results-decoration {
+    display: none;
+  }
+}
+
+/*elements*/
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  clip: rect(0 0 0 0);
+}
+
+/*transitions*/
+.hover-opacity {
+  transition: opacity var(--main-transition);
+
+  &:hover,
+  &:focus {
+    opacity: 0.7;
+  }
+}

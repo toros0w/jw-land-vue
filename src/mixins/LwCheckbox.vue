@@ -1,0 +1,58 @@
+<template>
+  <div :class="cls ? cls : 'lw-main-checkbox'">
+    <input type="checkbox" :id="id" />
+    <label :for="id">{{ label }}</label>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "LwCheckbox",
+  props: {
+    cls: String,
+    id: String,
+    label: String,
+  },
+};
+</script>
+
+<style lang="scss" scoped>
+.lw-main-checkbox {
+  min-height: 22px;
+
+  input[type="checkbox"] {
+    display: none;
+  }
+
+  label {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #757575;
+
+    &::before {
+      position: absolute;
+      top: -2px;
+      left: 0;
+      width: 20px;
+      height: 20px;
+      content: "";
+      background-color: #ffffff;
+      border: 1px solid #dedede;
+      border-radius: 3px;
+      background-color: #ffffff;
+    }
+    cursor: pointer;
+  }
+
+  input[type="checkbox"]:checked + label::before {
+    background-color: #4caf50;
+    border-color: transparent;
+    background-image: url("@/assets/img/icon-check.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+</style>
